@@ -8,128 +8,116 @@
 <style>
   :root {
     --bg: #bfada2;
-    --surface: #cdbfb4;
-    --surface-alt: #c4b4a7;
-    --text: #24211f;
-    --text-muted: #5c534a;
-    --text-dim: #7a6f64;
-    --accent: #8fb99b;
-    --accent-strong: #6d9a7d;
-    --border: rgba(36, 33, 31, 0.15);
-    --radius: 16px;
-    --shadow: 0 1px 2px rgba(36, 33, 31, 0.06), 0 4px 16px rgba(36, 33, 31, 0.08);
+    --fg: #24211f;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
   body {
     background: var(--bg);
-    color: var(--text);
+    color: var(--fg);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.65;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
-  .wrap { max-width: 720px; margin: 0 auto; padding: 0 20px 80px; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 24px 96px; }
 
   header {
-    padding: 56px 0 40px;
+    background: var(--fg);
+    color: var(--bg);
+    padding: 40px 24px;
+    margin: 0 -24px 48px;
     text-align: center;
   }
   .mark {
-    width: 96px;
-    height: 96px;
-    margin: 0 auto 18px;
+    width: 88px;
+    height: 88px;
+    margin: 0 auto 16px;
     display: block;
   }
   h1 {
-    font-size: 28px;
-    font-weight: 800;
+    font-size: 34px;
+    font-weight: 900;
     letter-spacing: -0.01em;
+    text-transform: uppercase;
   }
   .tagline {
     margin-top: 8px;
-    color: var(--text-muted);
-    font-size: 15px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
   }
   nav {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 12px;
     margin-top: 28px;
   }
   nav a {
     display: inline-block;
-    padding: 9px 18px;
-    border-radius: 999px;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    box-shadow: var(--shadow);
-    color: var(--text);
+    padding: 10px 22px;
+    background: var(--bg);
+    color: var(--fg);
     font-size: 14px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: background 0.15s ease, color 0.15s ease;
-  }
-  nav a:hover { background: var(--surface-alt); }
-
-  section.card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    padding: 40px 36px;
-    margin-top: 20px;
-  }
-  h2 {
-    font-size: 22px;
     font-weight: 800;
-    letter-spacing: -0.01em;
-    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    text-decoration: none;
   }
-  h2 .leaf { color: var(--accent-strong); }
+  nav a:hover { background: #a89588; }
+
+  h2 {
+    font-size: 26px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    padding: 14px 0 10px;
+    border-top: 6px solid var(--fg);
+    border-bottom: 2px solid var(--fg);
+    margin: 0 0 28px;
+  }
   h3 {
-    font-size: 16px;
-    font-weight: 700;
-    margin: 28px 0 10px;
-    color: var(--text);
+    font-size: 17px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin: 32px 0 12px;
   }
   h3:first-of-type { margin-top: 0; }
   p { margin-bottom: 14px; }
+  strong { font-weight: 800; }
   ul { list-style: none; margin: 0 0 14px; }
   ul li {
-    padding-left: 22px;
+    padding-left: 26px;
     position: relative;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
   }
   ul li::before {
     content: "";
     position: absolute;
     left: 4px;
-    top: 0.72em;
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: var(--accent);
+    top: 0.42em;
+    width: 10px;
+    height: 10px;
+    background: var(--fg);
   }
-  a { color: var(--accent-strong); }
-  a:hover { color: var(--text); }
+  a { color: var(--fg); }
 
   footer {
-    margin-top: 40px;
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 4px solid var(--fg);
     text-align: center;
-    color: var(--text-dim);
     font-size: 13px;
-  }
-  footer .divider {
-    width: 48px;
-    height: 2px;
-    background: var(--accent);
-    border-radius: 2px;
-    margin: 0 auto 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
   }
   @media (max-width: 560px) {
-    header { padding-top: 40px; }
-    h1 { font-size: 24px; }
-    section.card { padding: 28px 22px; }
+    header { padding: 32px 20px; }
+    h1 { font-size: 26px; }
+    h2 { font-size: 22px; }
+    .wrap { padding-bottom: 64px; }
   }
 </style>
 </head>
@@ -146,8 +134,8 @@
     </nav>
   </header>
 
-  <section class="card" id="privacy">
-    <h2><span class="leaf">Privacy Policy</span></h2>
+  <section id="privacy">
+    <h2>Privacy Policy</h2>
     <p>WordRunes is committed to protecting your privacy. This policy explains what data we collect, why, and your rights.</p>
     <p><strong>Data Controller:</strong> gamebytom. Contact: supportbytom@gmail.com</p>
 
@@ -194,8 +182,8 @@
     <p>We may update this policy. Continued use after changes constitutes acceptance.</p>
   </section>
 
-  <section class="card" id="terms">
-    <h2><span class="leaf">Terms of Service</span></h2>
+  <section id="terms">
+    <h2>Terms of Service</h2>
     <p>By using WordRunes you agree to these terms.</p>
 
     <h3>License</h3>
@@ -234,7 +222,6 @@
   </section>
 
   <footer>
-    <div class="divider"></div>
     <p>© 2026 gamebytom. All rights reserved.</p>
   </footer>
 </div>
