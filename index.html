@@ -21,18 +21,19 @@
   }
   .wrap { max-width: 720px; margin: 0 auto; padding: 0 24px 96px; }
 
+  .mark {
+    width: 104px;
+    height: 104px;
+    margin: 48px auto 28px;
+    display: block;
+  }
+
   header {
     background: var(--fg);
     color: var(--bg);
     padding: 40px 24px;
     margin: 0 -24px 48px;
     text-align: center;
-  }
-  .mark {
-    width: 88px;
-    height: 88px;
-    margin: 0 auto 16px;
-    display: block;
   }
   h1 {
     font-size: 34px;
@@ -114,6 +115,7 @@
     letter-spacing: 0.1em;
   }
   @media (max-width: 560px) {
+    .mark { margin-top: 32px; }
     header { padding: 32px 20px; }
     h1 { font-size: 26px; }
     h2 { font-size: 22px; }
@@ -123,9 +125,9 @@
 </head>
 <body>
 <div class="wrap">
+  <!-- Brand mark: the transparent splash logo, on the beige background -->
+  <img class="mark" src="logo.png" alt="WordRunes" width="104" height="104">
   <header>
-    <!-- Brand mark: the transparent splash logo -->
-    <img class="mark" src="logo.png" alt="WordRunes" width="96" height="96">
     <h1>WordRunes</h1>
     <p class="tagline">Privacy Policy &amp; Terms of Service</p>
     <nav>
